@@ -1,0 +1,55 @@
+<diagram program="umletino" version="15.1"><zoom_level>4</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>472</x><y>104</y><w>140</w><h>48</h></coordinates><panel_attributes>Borrowable
+--
++borrow(memberName: string) : string
++returnItem(): string
++isAvailable(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>200</y><w>176</w><h>92</h></coordinates><panel_attributes>LibaryItem
+--
+- title: string
+- available: boolean
+# itemId: string
+--
++LibraryItem(title: string, itemId: string)
++title(): string
++getItemId(): string
++available(available: boolean): void
++isAvailable(): boolean
++borrow(memberName: string): string
++returnItem(): string
++abstract getDetails(): string
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>208</x><y>200</y><w>176</w><h>72</h></coordinates><panel_attributes>Library
+--
+- item: Map&lt;string, LibaryItem&gt;
+- member: Map&lt;string, LibaryMember&gt;
+--
++addItem(item: :LibaryItem): void
++addMember(member: LibaryMember): void
++findMemberById(memberId: string): LibraryMember| undefined
++borrowItem(memberId:string, itemId:string): string
++returnItem(memberId:string, itemId:string): string
++getLibrarySummary(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>376</y><w>176</w><h>72</h></coordinates><panel_attributes>LibraryMember	
+--
+- _memberName:string
+-_ memberId:string
+-_borrowedItems: LibraryItem[]
+--
++LiraryMember( ... )
++memberName():string
++getMemnerId():string
++borrowItem(item:LibraryItem):string
++returnItem(itemId:string):string
++listBorrowedItem(): string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>188</y><w>84</w><h>32</h></coordinates><panel_attributes>LightNovel
+--
+-duration:number
+-
++LightNovel( ... )
++getDetails():string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>232</y><w>84</w><h>32</h></coordinates><panel_attributes>Manga
+--
+- issueDate: string
+-
++Manga( ... )
++getDetails():string</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>696</x><y>284</y><w>84</w><h>32</h></coordinates><panel_attributes>Fiction
+--
+- author : string
+-
++Fiction( ... )
++getDetails():string</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>372</x><y>288</y><w>168</w><h>132</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>400;10;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>268</y><w>12</w><h>116</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;270;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>240</y><w>72</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>536</x><y>148</y><w>12</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>204</y><w>88</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>248</y><w>88</w><h>12</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>Relation</id><coordinates><x>616</x><y>272</y><w>88</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;200;70</additional_attributes></element></diagram>
