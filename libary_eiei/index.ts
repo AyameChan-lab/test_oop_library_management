@@ -1,15 +1,11 @@
-// -------------------------
 // Interface (พฤติกรรมของสิ่งที่ยืมได้)
-// -------------------------
 interface Borrowable {
     borrow(memberName: string): string;
     returnItem(): string;
     isAvailable(): boolean;
 }
 
-// -------------------------
 // Abstract Class (Inheritance + Encapsulation)
-// -------------------------
 abstract class LibraryItem implements Borrowable {
     private _title: string;
     protected readonly itemId: string;
@@ -55,9 +51,7 @@ abstract class LibraryItem implements Borrowable {
     public abstract getDetails(): string; // สำหรับ override ใน subclass
 }
 
-// -------------------------
-// Subclass ตัวอย่าง
-// -------------------------
+
 class LightNovel extends LibraryItem {
     private author: string;
 
@@ -201,3 +195,4 @@ console.log(member.listBorrowedItems());
 console.log(library.returnItem("MEM001", "L001"));
 console.log(member.listBorrowedItems());
 console.log(fiction.getDetails())
+
